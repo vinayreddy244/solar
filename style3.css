@@ -1,0 +1,115 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url(back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.glow {
+    color: white;
+    text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px white;
+    animation: glowAnimation 1.5s infinite alternate;
+}
+
+@keyframes glowAnimation {
+    from {
+        text-shadow: 0 0 8px #ff4500, 0 0 20px #ff4500, 0 0 30px #ff4500, 0 0 40px #ff4500;
+    }
+    to {
+        text-shadow: 0 0 20px #ff8c00, 0 0 30px #ff8c00, 0 0 40px #ff8c00, 0 0 50px #ff8c00;
+    }
+}
+
+.missions {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 300px; /* Adjust width */
+    height: 400px; /* Adjust height */
+    perspective: 1000px;
+    margin: 50px; /* Adjust margin for more space */
+    margin-bottom: 30px; /* Add extra space between rows */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.flip-card-front {
+    background-color: #222;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px; /* Adjust padding */
+}
+
+.flip-card-front h2 {
+    margin: 10px 0;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 500px; /* Adjust height to maintain aspect ratio */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.flip-card-back {
+    background-color: #444;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column; /* Use column layout for better spacing */
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    font-size: 1rem; /* Adjust font size for readability */
+    padding: 20px; /* Adjust padding for better spacing */
+}
+
+.flip-card-back ul {
+    padding-left: 20px;
+    text-align: left;
+}
+
+.flip-card-back li {
+    margin: 5px 0;
+    line-height: 1.5;
+    list-style-type: disc;
+}
